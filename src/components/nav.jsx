@@ -1,12 +1,14 @@
 import React from 'react'
-import { HashRouter as Router, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
 import SignUpForm from "./SignUpForm";
 import SignInForm from "./SignInForm";
 
 const Nav = () => {
     return (
-        <Router basename="react-auth-ui/">
-            <div className="App">
+
+        <Router basename='/auth/'>
+
+            <div className="App" >
                 <div className="appAside" />
                 <div className="appForm">
                     <div className="pageSwitcher">
@@ -19,7 +21,7 @@ const Nav = () => {
                         </NavLink>
                         <NavLink
                             exact
-                            to="/"
+                            to="/sign-up"
                             activeClassName="pageSwitcherItem-active"
                             className="pageSwitcherItem"
                         >
@@ -38,7 +40,7 @@ const Nav = () => {
                         or{" "}
                         <NavLink
                             exact
-                            to="/"
+                            to="/sign-up"
                             activeClassName="formTitleLink-active"
                             className="formTitleLink"
                         >
@@ -47,11 +49,11 @@ const Nav = () => {
                     </div>
 
                     <Route path="/sign-in" component={SignInForm} />
-                    <Route exact path="/" component={SignUpForm} />
+                    <Route exact path="/sign-up" component={SignUpForm} />
 
                 </div>
-            </div>
-        </Router>
+            </div >
+        </Router >
     )
 }
 
